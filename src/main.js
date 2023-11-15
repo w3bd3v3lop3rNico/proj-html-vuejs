@@ -6,9 +6,9 @@ import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 /* import font awesome icon component */
-import {  } from '@fortawesome/vue-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import { faHeart as fasFaHeart, faBagShopping, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import {  } from '@fortawesome/free-solid-svg-icons';
 
 import {  } from '@fortawesome/free-regular-svg-icons';
 
