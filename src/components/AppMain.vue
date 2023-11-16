@@ -1,7 +1,156 @@
 <script>
+export default {
+    props: {
+        item: {
+            type: Object,
+            required: true,
+        }
+    },
+    data() {
+        return {
+
+        }
+    },
+    created() {
+        console.log(this.item.hero)
+    }
+
+}
 </script>
 <template>
-
+    <div class="container">
+        <!-- hero -->
+        <div class="hero">
+            <div class="slide">
+                <img :src="item.hero.img" alt="">
+                <div class="slide-text">
+                    <h1 class="title">{{ item.hero.title }}</h1>
+                    <h4 class="sec-title">{{ item.hero.secondTitle }}</h4>
+                    <div class="btn">
+                        <a href="#">{{ item.hero.cta }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="arrow arrow-right" @click="nextSlide()">
+                    <font-awesome-icon icon="fa-solid fa-chevron-right" />
+                </div>
+                <div class="arrow arrow-left" @click="prevSlide()">
+                    <font-awesome-icon icon="fa-solid fa-chevron-left" />
+                </div>
+            </div>
+        </div>
+        <!-- match proposto -->
+        <div class="proposed-match">
+            <div class="match">
+                <div class="club club-1">
+                    <div class="name">{{ item.proposedMatch.club1Name }}</div>
+                    <img :src="item.proposedMatch.club1Img" alt="">
+                </div>
+                <p>vs</p>
+                <div class="club club-2">
+                    <img :src="item.proposedMatch.club2Img" alt="">
+                    <div class="name">{{ item.proposedMatch.club2Name }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <style lang="scss" scoped>
+@use '../styles/partials/colors-palette' as *;
+// hero
+.hero {
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .slide-text {
+        position: absolute;
+        top: 30%;
+        right: 50%;
+        transform: translateX(50%);
+        // transform: translateY(50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: $light;
+        max-width: 320px;
+        gap: 10px;
+
+        .title {
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .btn {
+            border: 2px solid $light;
+            line-height: 40px;
+            padding: 0 20px;
+            border-radius: 20px;
+        }
+
+    }
+
+    .arrow {
+        border: 3px solid $light;
+        color: $light;
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border-radius: 100%;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+
+        
+    }
+
+    .arrow-left {
+        left: 40px;
+    }
+
+    .arrow-right {
+        right: 40px;
+    }
+
+}
+
+// proposed match
+
+.proposed-match {
+    padding: 20px 0;
+    width: 100%;
+    .match {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        .club {
+            display: flex;
+            align-items: center;
+            .name {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+        p {
+            font-size: 70px;
+            font-weight: bold;
+        }
+    }
+}
 </style>
+
+
