@@ -79,7 +79,7 @@ export default {
                 </div>
             </div>
             <ul class="row">
-                <li class="col-12 proposed-match" v-for="match, idx in item.matchDays.length" :key="idx">
+                <li class="col-12 proposed-match" v-for="match, idx in 5" :key="idx">
                     <div class="match" v-if="idx < 5">
                         <div class="match-clubs">
                             <div class="club club-1">
@@ -109,7 +109,29 @@ export default {
             </ul>
         </div>
         <!-- players -->
-        
+        <div class="players section-container">
+            <div class="row title">
+                <div class="col-12">
+                    <h4>Players</h4>
+                </div>
+            </div>
+            <ul class="row">
+                <li class="col-3" v-for="(player, idx) in 4">
+                    <div class="card player">
+                        <img src="/imgs/player1.jpg" alt="">
+                        <div class="card-text">
+                            <p class="number">10</p>
+                            <p class="name">Pippo</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn">
+                <a href="#">View All Players</a>
+            </div>
+
+        </div>
+
     </div>
 </template>
 <style lang="scss" scoped>
@@ -217,6 +239,50 @@ export default {
         
     }
 
+}
+
+// players
+
+.players {
+    padding: 20px;
+    background-image: url(/imgs/player.jpg);
+    background-size: cover;
+    background-position: center;
+    color: $light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .col-3 {
+        padding: 0 10px;
+
+        .card {
+            position: relative;
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+                display: block;
+            }
+            .card-text {
+                background-color: $dark;
+                border-radius: 20px;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+        margin-bottom: 20px;
+    }
+    .btn {
+        background-color: $dark;
+        border: 1px solid $light;
+    }
 }
 </style>
 
