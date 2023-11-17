@@ -33,7 +33,7 @@ export const store = reactive({
             name: 'Inter Club'
         },
         {
-            img: 'club-5.png',
+            img: 'club-1.png',
             name: 'Madrid Club'
         },
         {
@@ -111,7 +111,7 @@ export const store = reactive({
             stadium: 'Expert Stadium'
         },
         {
-            club1Img: '/imgs/club-5.png',
+            club1Img: '/imgs/club-11.png',
             club1Name: 'Madrid Club',
             club2Img: '/imgs/club-6.png',
             club2Name: 'Shalke Club',

@@ -88,7 +88,7 @@ export default {
                             </div>
                             <p>vs</p>
                             <div class="club club-2">
-                                
+
                                 <div class="name">{{ item.matchDays[idx].club2Name }}</div>
                                 <img :src="item.matchDays[idx].club2Img" alt="">
                             </div>
@@ -102,7 +102,6 @@ export default {
                                 <font-awesome-icon icon="fa-solid fa-circle-plus" class="icon-match" />
                                 <span>{{ item.matchDays[idx].stadium }}</span>
                             </div>
-
                         </div>
                     </div>
                 </li>
@@ -129,9 +128,74 @@ export default {
             <div class="btn">
                 <a href="#">View All Players</a>
             </div>
-
         </div>
+        <!-- ranking and match results -->
+        <div class="results section-container">
+            <div class="row">
+                <table class="col-6 league-table">
+                    <thead>
+                        <tr>
+                            <th colspan="7">League Table</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-legend">
+                            <td colspan="3" class="team-header">Team</td>
+                            <td>W</td>
+                            <td>D</td>
+                            <td>L</td>
+                            <td>PTS</td>
+                        </tr>
+                        <tr v-for="(club, idx) in 9" :key="idx" class="ranking">
+                            <td class="club-position">1</td>
+                            <td>
+                                <img src="/imgs/club-1.png" alt="">
+                            </td>
+                            <td class="club-name">Nome Squadra</td>
+                            <td>18</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>42</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="t-footer">
+                        <tr>
+                            <td colspan="7">View Full League Table</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <table class="col-6">
+                    <thead>
+                        <tr>
+                            <th>Fixtures & Results</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="proposed-match" v-for="(fixture, idx) in 9" :key="idx">
+                            <td class="match">
+                                <div class="match-clubs">
+                                    <div class="club club-1">
+                                        <img :src="item.matchDays[idx].club1Img" alt="">
+                                        <div class="name">{{ item.matchDays[idx].club1Name }}</div>
+                                    </div>
+                                    <p>vs</p>
+                                    <div class="club club-2">
 
+                                        <div class="name">{{ item.matchDays[idx].club2Name }}</div>
+                                        <img :src="item.matchDays[idx].club2Img" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="t-footer">
+                        <tr>
+                            <td colspan="7">View Full League Table</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -224,19 +288,20 @@ export default {
     background-position: center;
     color: $light;
     padding: 20px;
-    
-     .title {
+
+    .title {
         text-align: center;
         margin-bottom: 20px;
         font-size: 30px;
-     }
+    }
+
     .proposed-match {
         .match {
             background-color: $dark-opacity;
             width: 100%;
             padding: 20px;
         }
-        
+
     }
 
 }
@@ -257,16 +322,19 @@ export default {
         text-align: center;
         margin-bottom: 20px;
     }
+
     .col-3 {
         padding: 0 10px;
 
         .card {
             position: relative;
+
             img {
                 border-radius: 20px;
                 object-fit: cover;
                 display: block;
             }
+
             .card-text {
                 background-color: $dark;
                 border-radius: 20px;
@@ -277,12 +345,72 @@ export default {
                 bottom: 0;
             }
         }
+
         margin-bottom: 20px;
     }
+
     .btn {
         background-color: $dark;
         border: 1px solid $light;
     }
+}
+
+// ranking and match results
+table {
+    font-size: 20px;
+    font-weight: 20px;
+
+    img {
+        width: 30px;
+        display: block;
+    }
+
+}
+
+.results {
+    padding: 20px;
+
+    .league-table {
+        border-collapse: collapse;
+        table-layout: auto;
+        text-align: center;
+
+        .club-position {
+            width: 10%;
+        }
+
+        .table-legend {
+            background-color: $dark-opacity;
+            color: $light;
+
+            .team-header {
+                text-align: left;
+                padding: 0 0 0 5px;
+            }
+        }
+
+        .ranking {
+            background-color: $gray;
+
+            .club-name {
+                text-align: left;
+            }
+        }
+
+        
+
+        
+    }
+    // table {
+    //     padding: 20px;
+    // }
+tr {
+            line-height: 40px;
+        }
+    .t-footer {
+            background-color: $dark;
+            color: $light;
+        }
 }
 </style>
 
