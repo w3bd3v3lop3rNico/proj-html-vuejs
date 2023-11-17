@@ -50,7 +50,7 @@ export default {
                     <div class="name">{{ item.proposedMatch.club1Name }}</div>
                     <img :src="item.proposedMatch.club1Img" alt="">
                 </div>
-                <p>vs</p>
+                <p class="versus-big">vs</p>
                 <div class="club club-2">
                     <img :src="item.proposedMatch.club2Img" alt="">
                     <div class="name">{{ item.proposedMatch.club2Name }}</div>
@@ -86,7 +86,7 @@ export default {
                                 <img :src="item.matchDays[idx].club1Img" alt="">
                                 <div class="name">{{ item.matchDays[idx].club1Name }}</div>
                             </div>
-                            <p>vs</p>
+                            <p class="versus-big">vs</p>
                             <div class="club club-2">
 
                                 <div class="name">{{ item.matchDays[idx].club2Name }}</div>
@@ -257,6 +257,7 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/partials/colors-palette' as *;
+@use '../styles/partials/main-components' as *;
 
 // hero
 .hero {
@@ -271,7 +272,7 @@ export default {
 
     .slide-text {
         position: absolute;
-        top: 30%;
+        bottom: 40%;
         right: 50%;
         transform: translateX(50%);
         // transform: translateY(50%);
@@ -328,13 +329,20 @@ export default {
 }
 
 // proposed match
-.more-details {
+.proposed-match {
+    .versus-big {
+            font-size: 70px;
+            font-weight: bold;
+        }
+    .more-details {
     line-height: 40px;
     background-color: $dark;
     color: $light;
     padding: 0 20px;
     border-radius: 20px;
 }
+}
+
 
 // Upcoming matches
 .upcoming-matches {
