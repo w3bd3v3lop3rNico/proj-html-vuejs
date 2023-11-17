@@ -235,12 +235,24 @@ export default {
                 <h6 class="sec-title">Be aware of the football world</h6>
             </div>
             <div class="row">
-                <div class="col-3">
+                <div class="col-3" v-for="(article, idx) in 4">
+                    <div class="card">
+                        <figure>
+                            <img src="/imgs/news1-1-223x223.png" alt="">
+                        </figure>
+                        <p>29.06.2022 - Football</p>
+                        <h5>What is Football</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, libero?</p>
+                        <div class="btn">
+                            <a href="#">More</a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
 
         </div>
+
     </div>
 </template>
 <style lang="scss" scoped>
@@ -528,7 +540,7 @@ table {
 .articles {
     padding: 20px;
 
-    .row {
+    .title {
         flex-direction: column;
         align-items: center;
         gap: 8px;
@@ -541,7 +553,7 @@ table {
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             .title-image {
                 color: $light;
                 font-size: 50px;
@@ -553,16 +565,19 @@ table {
                 align-items: center;
                 justify-content: center;
             }
-            
+
         }
+
         .main-title {
             font-size: 30px;
         }
-        .sec-title{
-                color: grey;
-            }
+
+        .sec-title {
+            color: grey;
+        }
 
     }
+
 }
 </style>
 

@@ -39,6 +39,10 @@ figure > img {
     flex-basis: calc((100% / 12) * 3);
 }
 
+.col-5 {
+    flex-basis: calc((100% / 12) * 5);
+}
+
 .col-6 {
     flex-basis: calc((100% / 12) * 6);
 }
