@@ -12,7 +12,10 @@ export default {
         }
     },
     created() {
-        console.log(this.item.hero)
+        console.log(this.item.matchDays.club1Img)
+        console.log(this.item.matchDays)
+        console.log()
+
     }
 
 }
@@ -42,7 +45,7 @@ export default {
         </div>
         <!-- match proposto -->
         <div class="proposed-match">
-            <div class="match">
+            <div class="match-clubs">
                 <div class="club club-1">
                     <div class="name">{{ item.proposedMatch.club1Name }}</div>
                     <img :src="item.proposedMatch.club1Img" alt="">
@@ -53,11 +56,65 @@ export default {
                     <div class="name">{{ item.proposedMatch.club2Name }}</div>
                 </div>
             </div>
+            <div class="match-info">
+                <div class="match-date">
+                    <font-awesome-icon icon="fa-regular fa-calendar-days" class="icon-match" />
+                    <span>{{ item.proposedMatch.date }}</span>
+                </div>
+                <div class="match-location">
+                    <font-awesome-icon icon="fa-solid fa-circle-plus" class="icon-match" />
+                    <span>{{ item.proposedMatch.stadium }}</span>
+                </div>
+
+            </div>
+            <div class="more-details">
+                <a href="#">View Match Details</a>
+            </div>
         </div>
+        <!-- Upcoming matches -->
+        <div class="upcoming-matches">
+            <div class="row title">
+                <div class="col-12">
+                    <h4>Upcomig Matches</h4>
+                </div>
+            </div>
+            <ul class="row">
+                <li class="col-12 proposed-match" v-for="match, idx in item.matchDays.length" :key="idx">
+                    <div class="match" v-if="idx < 5">
+                        <div class="match-clubs">
+                            <div class="club club-1">
+                                <img :src="item.matchDays[idx].club1Img" alt="">
+                                <div class="name">{{ item.matchDays[idx].club1Name }}</div>
+                            </div>
+                            <p>vs</p>
+                            <div class="club club-2">
+                                
+                                <div class="name">{{ item.matchDays[idx].club2Name }}</div>
+                                <img :src="item.matchDays[idx].club2Img" alt="">
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <div class="match-date">
+                                <font-awesome-icon icon="fa-regular fa-calendar-days" class="icon-match" />
+                                <span>{{ item.matchDays[idx].date }}</span>
+                            </div>
+                            <div class="match-location">
+                                <font-awesome-icon icon="fa-solid fa-circle-plus" class="icon-match" />
+                                <span>{{ item.matchDays[idx].stadium }}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- players -->
+        
     </div>
 </template>
 <style lang="scss" scoped>
 @use '../styles/partials/colors-palette' as *;
+
 // hero
 .hero {
     position: relative;
@@ -114,7 +171,7 @@ export default {
         justify-content: center;
         font-size: 30px;
 
-        
+
     }
 
     .arrow-left {
@@ -129,27 +186,37 @@ export default {
 
 // proposed match
 
-.proposed-match {
-    padding: 20px 0;
-    width: 100%;
-    .match {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        .club {
-            display: flex;
-            align-items: center;
-            .name {
-                font-size: 20px;
-                font-weight: bold;
-            }
+.more-details {
+    line-height: 40px;
+    background-color: $dark;
+    color: $light;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+// Upcoming matches
+
+.upcoming-matches {
+    background-image: url(/imgs/saha.jpg);
+    background-size: cover;
+    background-position: center;
+    color: $light;
+    padding: 20px;
+    
+     .title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+     }
+    .proposed-match {
+        .match {
+            background-color: $dark-opacity;
+            width: 100%;
+            padding: 20px;
         }
-        p {
-            font-size: 70px;
-            font-weight: bold;
-        }
+        
     }
+
 }
 </style>
 

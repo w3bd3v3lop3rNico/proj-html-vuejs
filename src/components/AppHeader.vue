@@ -23,7 +23,7 @@ export default {
 
     .navbar {
         position: absolute;
-        background-color: $dark;
+        background-color: $dark-opacity;
         opacity: 0.5;
         padding: 20px;
         width: 100%;

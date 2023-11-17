@@ -34,7 +34,7 @@ export const store = reactive({
         },
         {
             img: 'club-5.png',
-            name:'Madrid Club'
+            name: 'Madrid Club'
         },
         {
             img: 'club-6.png',
@@ -55,42 +55,78 @@ export const store = reactive({
     ],
     matchDays: [
         {
+            club1Img: '/imgs/club-3.png',
+            club1Name: 'Schalke Club',
+            club2Img: '/imgs/club-4.png',
+            club2Name: 'Inter Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-9.png',
+            club1Name: 'Atletico Club',
+            club2Img: '/imgs/club-6.png',
+            club2Name: 'Schalke Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-2.png',
+            club1Name: 'United Fs Club',
+            club2Img: '/imgs/club-8.png',
+            club2Name: 'Bayern Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-7.png',
+            club1Name: 'Arsenal Club',
+            club2Img: '/imgs/club-9.png',
+            club2Name: 'Atletico Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-1.png',
+            club1Name: 'Instanbul Sports',
+            club2Img: '/imgs/club-2.png',
+            club2Name: 'United Fs Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-9.png',
+            club1Name: 'Atletico Club',
+            club2Img: '/imgs/club-6.png',
+            club2Name: 'Schalke Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-3.png',
+            club1Name: 'Schalke Club',
+            club2Img: '/imgs/club-4.png',
+            club2Name: 'Inter Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-5.png',
+            club1Name: 'Madrid Club',
+            club2Img: '/imgs/club-6.png',
+            club2Name: 'Shalke Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
         {
+            club1Img: '/imgs/club-7.png',
+            club1Name: 'Arsenal Club',
+            club2Img: '/imgs/club-9.png',
+            club2Name: 'Atletico Club',
             date: 'October 20, 2022 17:00 pc',
             stadium: 'Expert Stadium'
         },
     ]
-    
+
 
 });
