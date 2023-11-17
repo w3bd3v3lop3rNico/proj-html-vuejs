@@ -10,10 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import { faChevronRight, faChevronLeft, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
-import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
+import { faCalendarDays, faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 
 import {  } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faChevronRight, faChevronLeft, faCirclePlus, faCalendarDays );
+library.add(faChevronRight, faChevronLeft, faCirclePlus, faCalendarDays, faThumbsUp );
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')

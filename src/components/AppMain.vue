@@ -196,6 +196,51 @@ export default {
                 </table>
             </div>
         </div>
+
+        <!-- bonus -->
+        <div class="bonus section-container">
+            <div class="code">
+                <span>bet</span><span class="code-number">777</span>
+            </div>
+            <div class="description">
+                <p class="cta">Sign Up Now</p>
+                <p class="description-bonus">Get <span>100%</span> Bonus for your first investiment!</p>
+                <p class="deadline">Deadline 20 June</p>
+            </div>
+
+        </div>
+
+        <!-- sponsors -->
+        <div class="sponsors section-container">
+            <div class="row">
+                <div class="col-2" v-for="(sponsor, idx) in 6" :key="idx">
+                    <figure class="sponsor-card">
+                        <img src="/imgs/client2.png" alt="">
+
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Articles -->
+        <div class="articles section-container">
+            <div class="row title">
+                <div class="bg-image">
+                    <div class="title-image">
+                        <font-awesome-icon icon="fa-regular fa-thumbs-up" />
+                    </div>
+                </div>
+                <h3 class="main-title">Resent New & Articles </h3>
+                <h6 class="sec-title">Be aware of the football world</h6>
+            </div>
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -271,7 +316,6 @@ export default {
 }
 
 // proposed match
-
 .more-details {
     line-height: 40px;
     background-color: $dark;
@@ -281,7 +325,6 @@ export default {
 }
 
 // Upcoming matches
-
 .upcoming-matches {
     background-image: url(/imgs/saha.jpg);
     background-size: cover;
@@ -307,7 +350,6 @@ export default {
 }
 
 // players
-
 .players {
     padding: 20px;
     background-image: url(/imgs/player.jpg);
@@ -397,20 +439,130 @@ table {
             }
         }
 
-        
 
-        
+
+
     }
+
     // table {
     //     padding: 20px;
     // }
-tr {
-            line-height: 40px;
-        }
+    tr {
+        line-height: 40px;
+    }
+
     .t-footer {
-            background-color: $dark;
-            color: $light;
+        background-color: $dark;
+        color: $light;
+        text-align: center;
+    }
+}
+
+// bonus
+.bonus {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-gray;
+
+    .code {
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        .code-number {
+            color: #002152;
         }
+    }
+
+    .description {
+        flex-grow: 1;
+        text-align: center;
+
+        .cta {
+            font-size: 30px;
+            font-weight: bold;
+            color: #002152;
+        }
+
+        .description-bonus {
+            font-size: 30px;
+
+            span {
+                font-size: 35px;
+                color: #002152;
+                font-weight: bold;
+            }
+        }
+
+        .deadline {
+            color: #002152;
+        }
+
+    }
+}
+
+// sponsors
+.sponsors {
+    background-color: $dark;
+    padding: 50px 15px;
+
+    .row {
+        justify-content: center;
+    }
+
+    .col-2 {
+        padding: 0 15px
+    }
+
+    .sponsor-card {
+        border: 2px solid $light;
+        border-radius: 20px;
+        padding: 10px;
+        width: 150px;
+    }
+}
+
+// articles
+.articles {
+    padding: 20px;
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .bg-image {
+            background-color: $dark;
+            border-radius: 999px;
+            width: 85px;
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .title-image {
+                color: $light;
+                font-size: 50px;
+                border: 3px dotted $light;
+                border-radius: 999px;
+                width: 70px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+        }
+        .main-title {
+            font-size: 30px;
+        }
+        .sec-title{
+                color: grey;
+            }
+
+    }
 }
 </style>
 
